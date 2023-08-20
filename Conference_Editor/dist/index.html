@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Landing Page in Bootstrap 4</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./style.css">
+<style>
+  .dark-footer {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px; /* Adjust the font size as needed */
+    text-align: center; /* Center-align the text */
+    padding: 10px 0; /* Add some padding for better spacing */
+  }
+  .dark-footer a {
+    color: #fff;
+    font-size: 16px; /* Adjust the font size for the link as needed */
+  }
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div ng-app="bootstrpConf">
+  <div id="signup_form_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="modal_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <h4 class="modal-title" id="modal_label">Sign Up Today!</h4>
+        </div>+
+        <div class="modal-body">
+          <form id="signup_form" action="">
+            <fieldset class="form-group">
+              <label for="first_name">First Name:</label>
+              <input class="form-control" id="first_name" placeholder="First Name">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="last_name">Last Name:</label>
+              <input class="form-control" id="last_name" placeholder="Last Name">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="email">Email:</label>
+              <input class="form-control" id="email" placeholder="Email">
+              <small class="text-muted">Your email will be used as your username.</small>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="profession">You're:</label>
+              <select id="profession" class="c-select">
+              <option>---</option>
+              <option>Javascript Developer</option>
+              <option>Ruby developer</option>
+              <option>Python developer</option>
+              <option>Web Designer</option>
+            </select>
+            </fieldset>
+            <fieldset class="form-group">
+              <label class="c-input c-radio">
+                <input type="radio" name="age" id="age1" value="under21">
+                <span class="c-indicator"></span>
+                I am &lt;21
+              </label>
+              <label class="c-input c-radio">
+                <input type="radio" name="age" id="age2" value="over21" checked>
+                <span class="c-indicator"></span>
+                I am &gt;21
+              </label>
+            </fieldset>
+            <fieldset class="form-group m-t-2">
+              <button class="btn btn-danger" type="submit">Sign Up</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <div id="speakers_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="modal_label">
+
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <h4 class="modal-title" id="modal_label">Speakers</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item"><span>Jason Node</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Alice Sass</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Carl Ruby</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Frank Script</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Sophie Perl</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <nav class="top-nav m-b-3 p-t-1 animated fadeInDown clearfix">
+    <div class="container">
+      <ul class="list-unstyled list-inline">
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#home">Home</a></li>
+
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#speakers">Speakers</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#locations">Register</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#topics">Topics</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" id="login">Login</a></li>
+        <li class="list-inline-item m-r-0"><a href="#" class="btn signup-btn btn-danger btn-sm" data-toggle="modal" data-target="#signup_form_modal">Submit Papers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- jumbotron -->
+  <header id="home" class="top-hero jumbotron-fluid p-b-3 bg-faded">
+    <div class="container animated fadeInUp">
+      <h1 class="display-3">SAAIR Conference</h1>
+      <p class="lead m-t-1">November 3rd - November 5th</p>
+      <p class="lead m-t-1 m-b-2">Largest AI & Robotics gathering in South India.</p>
+      <button id="brochureButton" type="button" class="btn btn-lg btn-danger m-t-1">Get Brochure</button>
+
+      <button type="button" class="js-scroll btn btn-lg btn-default m-t-1" data-scroll-to="#speakers">Explore</button>
+    </div>
+  </header>
+
+
+  <section id="boast" class="banner boast p-y-3">
+    <div class="wrapper">
+      <h2 style = "color: blue" class="m-b-2 display-5 text-uppercase">
+     Introducing the South Asian AI and Robotics Conference (SAAIRC) - NIT AP</h2>
+     <p style="font-size: 18px;">
+       The South Asian AI and Robotics Conference (SAAIRC) is poised to be an extraordinary gathering that transcends boundaries and harnesses the power of human ingenuity. Hosted by the esteemed National Institute of Technology Andhra Pradesh (NIT AP), this conference is a convergence of the brightest minds in the fields of AI and robotics.
+     </p>
+     <p style="font-size: 18px;">
+       SAAIRC serves as a dynamic platform where pioneering professors and groundbreaking researchers from across the globe converge to exchange ideas, insights, and innovations. The conference is a melting pot of brilliance, where ideas collide, and possibilities multiply. Get ready to dive into a realm of cutting-edge technologies, breakthroughs, and transformative discussions.
+     </p>
+     <p style="font-size: 18px;">
+       SAAIRC brings together a congregation of visionaries, thought leaders, and experts in AI and robotics. Engage in meaningful conversations, connect with like-minded peers, and forge partnerships that drive groundbreaking collaborations. It's a networking opportunity like no other – an avenue to create, inspire, and fuel the future.
+     </p>
+     <h2 style="font-size: 32px; color: red" class="m-b-2 display-5 text-uppercase">
+       Mark Your Calendar: 3rd Nov 2023
+     </h2>
+     <p style="font-size: 18px;">
+       Join us at the South Asian AI and Robotics Conference (SAAIRC) – Where Brilliance Converges, Ideas Flourish, and the Future Unfolds. Be a part of this unprecedented journey as we propel the realms of AI and robotics to new horizons.
+     </p>
+    </div>
+  </section>
+
+
+  <section id="speakers" class="banner speakers p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Meet With Experts</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#speakers_modal">Our Speakers</a>
+    </div>
+  </section>
+  <section id="topics" class="banner learn p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Learn Industry Practices</h2>
+      <a href="#" class="btn btn-danger btn-lg btn-block">Topics</a>
+    </div>
+  </section>
+  <div id="locations" class="banner signup p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Don't Miss Out</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block"  id = "RegistrationButton">Register Now</a>
+    </div>
+  </div>
+<footer class="p-y-2 dark-footer">
+    <p class="copyright">Made by AI and Robotics Club, NIT Andhra Pradesh</p>
+    <p class="linkedin-profile"><a href="https://www.linkedin.com/in/adyanta-dubey-a57895225" target="_blank">Visit us on LinkedIn</a></p>
+</footer>
+</div>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Get a reference to the button element
+  var brochureButton = document.getElementById("brochureButton");
+  
+  // Add a click event listener to the button
+  brochureButton.addEventListener("click", function() {
+    // Redirect to the desired HTML page
+    window.location.href = "../../information-page/dist/index.html";
+  });
+});
+</script>
+<script >
+document.addEventListener("DOMContentLoaded", function() {
+  // Get a reference to the button element
+  var RegistrationButton = document.getElementById("RegistrationButton");
+  
+  // Add a click event listener to the button
+  RegistrationButton.addEventListener("click", function() {
+    // Redirect to the desired HTML page
+    window.location.href = "../../login-registration-page/dist/index.html";
+  });
+});
+</script>
+<script >
+document.addEventListener("DOMContentLoaded", function() {
+  // Get a reference to the button element
+  var login = document.getElementById("login");
+  
+  // Add a click event listener to the button
+  login.addEventListener("click", function() {
+    // Redirect to the desired HTML page
+    window.location.href = "../../login-materialize/dist/index.html";
+  });
+});
+</script>
+
+
+</body>
+</html>

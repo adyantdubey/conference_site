@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    $color-white: #fff;
+$color-antiwhite: #EDF2F4;
+$color-coolgray: #8D99AE;
+$color-gunmetal: #2B2D42;
+$color-imperialred: #EF233C;
+$color-candyred: #D90429;
+@mixin bp-sm {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+html {
+  font-size: 14px;
+}
+
+.animated {
+  animation-duration: 500ms;
+}
+
+.btn {
+  border-radius: 2px;
+}
+
+.btn.btn-danger {
+  border-color: $color-candyred;
+  background-color: $color-imperialred;
+}
+
+.btn.btn-primary {
+  border-color: $color-gunmetal;
+  background-color: $color-gunmetal;
+}
+
+.btn.btn-default:hover {
+  background-color: #fafafa;
+}
+
+.top-hero {
+  background-color: #fafafa;
+  background-image: linear-gradient(rgba($color-gunmetal, .75), rgba($color-gunmetal, .75)), url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg=");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  // min-height: 800px;
+  height: 100vh;
+  padding-top: 125px;
+  
+  
+  display: flex;
+  align-items: center;
+  
+  h1 {
+    color: $color-candyred;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 50%;
+    letter-spacing: -1px;
+    line-height: .9;
+  }
+  p {
+    color: $color-antiwhite;
+  }
+  @include bp-sm {
+    min-height: 400px;
+    padding-top: 50px;
+    h1 {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+  }
+}
+
+.top-nav {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  &.sticky {
+    position: fixed;
+  }
+  ul {
+    float: right;
+    .signup-btn {
+      padding: .25em .5em;
+    }
+    .signup-btn,
+    .signup-btn:hover {
+      color: $color-antiwhite!important;
+      border-bottom: 1px solid $color-candyred!important;
+      border-color: $color-candyred!important;
+    }
+  }
+  a {
+    font-size: 1.1rem;
+    color: $color-antiwhite;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    padding: 0 0 5px;
+    transition: .25s;
+  }
+  a:hover {
+    color: $color-imperialred;
+    border-color: $color-imperialred;
+  }
+}
+
+.banner {
+  color: $color-antiwhite;
+  background-position: center;
+  background-size: cover;
+  // background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // min-height: 400px;
+  height: 100vh;
+  
+  .wrapper {
+    text-align: center;
+  }
+  
+  @include bp-sm {
+    min-height: 400px;
+    h1,
+    h2 {
+      font-size: 20px;
+    }
+  }
+  &.speakers,
+  &.signup {
+    background-color: $color-candyred;
+  }
+  &.speakers {
+    background-image: linear-gradient(rgba($color-candyred, .45), rgba($color-candyred, .45)), url("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?dpr=1&auto=compress,format&fit=crop&w=1199&h=764&q=80&cs=tinysrgb&crop=&bg=");
+  }
+  &.learn {
+    background-color: $color-gunmetal;
+    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1493020258366-be3ead1b3027?dpr=1&auto=compress,format&fit=crop&w=1199&h=1199&q=80&cs=tinysrgb&crop=&bg=");
+  }
+  &.signup {
+    background-image: linear-gradient(rgba($color-candyred, .45), rgba($color-candyred, .45)), url("https://images.unsplash.com/photo-1487537708572-3c850b5e856e?dpr=1&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=&bg=");
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: $color-gunmetal;
+  color: $color-antiwhite;
+  .copyright {
+    padding: 0;
+    margin-top: 7px;
+    font-size: 0.9rem;
+  }
+}
+
+
+// modals
+
+#speakers_modal .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</style>>
+</head>
+<body>
+<div ng-app="bootstrpConf">
+  <div id="signup_form_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="modal_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <h4 class="modal-title" id="modal_label">Sign Up Today!</h4>
+        </div>
+        <div class="modal-body">
+          <form id="signup_form" action="">
+            <fieldset class="form-group">
+              <label for="first_name">First Name:</label>
+              <input class="form-control" id="first_name" placeholder="First Name">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="last_name">Last Name:</label>
+              <input class="form-control" id="last_name" placeholder="Last Name">
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="email">Email:</label>
+              <input class="form-control" id="email" placeholder="Email">
+              <small class="text-muted">Your email will be used as your username.</small>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="profession">You're:</label>
+              <select id="profession" class="c-select">
+              <option>---</option>
+              <option>Javascript Developer</option>
+              <option>Ruby developer</option>
+              <option>Python developer</option>
+              <option>Web Designer</option>
+            </select>
+            </fieldset>
+            <fieldset class="form-group">
+              <label class="c-input c-radio">
+                <input type="radio" name="age" id="age1" value="under21">
+                <span class="c-indicator"></span>
+                I am &lt;21
+              </label>
+              <label class="c-input c-radio">
+                <input type="radio" name="age" id="age2" value="over21" checked>
+                <span class="c-indicator"></span>
+                I am &gt;21
+              </label>
+            </fieldset>
+            <fieldset class="form-group m-t-2">
+              <button class="btn btn-danger" type="submit">Sign Up</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <div id="speakers_modal" class="modal fade" aria-hidden="true" role="dialog" aria-labelledby="modal_label">
+
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <h4 class="modal-title" id="modal_label">Speakers</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item"><span>Jason Node</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Alice Sass</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Carl Ruby</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Frank Script</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+            <li class="list-group-item"><span>Sophie Perl</span> <a href="#" class="btn btn-sm btn-danger">Details</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <nav class="top-nav m-b-3 p-t-1 animated fadeInDown clearfix">
+    <div class="container">
+      <ul class="list-unstyled list-inline">
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#home">Home</a></li>
+
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#speakers">Speakers</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#locations">Locations</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#topics">Topics</a></li>
+        <li class="list-inline-item m-r-0"><a href="#" class="btn signup-btn btn-danger btn-sm" data-toggle="modal" data-target="#signup_form_modal">Buy Tickets</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- jumbotron -->
+  <header id="home" class="top-hero jumbotron-fluid p-b-3 bg-faded">
+    <div class="container animated fadeInUp">
+      <h1 class="display-3">Bootstrap Conference</h1>
+      <p class="lead m-t-1">July 30th - August 15th</p>
+      <p class="lead m-t-1 m-b-2">Everything you need to know about Bootstrap.</p>
+      <button type="button" class="btn btn-lg btn-danger m-t-1" data-toggle="modal" data-target="#signup_form_modal">Buy Tickets</button>
+      <button type="button" class="js-scroll btn btn-lg btn-default m-t-1" data-scroll-to="#speakers">Learn More</button>
+    </div>
+  </header>
+
+  <section id="speakers" class="banner speakers p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Meet With Experts</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#speakers_modal">Our Speakers</a>
+    </div>
+  </section>
+  <section id="topics" class="banner learn p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Learn Industry Practices</h2>
+      <a href="#" class="btn btn-danger btn-lg btn-block">Topics</a>
+    </div>
+  </section>
+  <div id="locations" class="banner signup p-y-3">
+    <div class="wrapper">
+      <h2 class="m-b-2 display-5 text-uppercase">Don't Miss Out</h2>
+      <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#signup_form_modal">Buy Tickets</a>
+    </div>
+  </div>
+  <footer class="p-y-2">
+    <p class="copyright"><span id="copyright-year">2016</span> Bootstrap Conference, All Rights Reserved</p>
+  </footer>
+</div>
+</body>
+</html>

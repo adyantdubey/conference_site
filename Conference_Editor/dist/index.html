@@ -19,6 +19,28 @@
   }
 </style>
 
+<style>
+.gradient-text {
+  font-size: 32px;
+  color: transparent;
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  display: inline-block; /* To contain the gradient within the text */
+}
+
+.m-b-2 {
+  margin-bottom: 2rem;
+}
+
+.display-5 {
+  /* Add your styles for display-5 class here */
+}
+
+.text-uppercase {
+  /* Add your styles for text-uppercase class here */
+}
+</style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -112,7 +134,7 @@
 
         <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#speakers">Speakers</a></li>
         <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#locations">Register</a></li>
-        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#topics">Topics</a></li>
+        <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" data-scroll-to="#topics">Procedure</a></li>
         <li class="list-inline-item m-r-1"><a href="#" class="js-scroll" id="login">Login</a></li>
         <li class="list-inline-item m-r-0"><a href="#" class="btn signup-btn btn-danger btn-sm" data-toggle="modal" data-target="#signup_form_modal">Submit Papers</a></li>
       </ul>
@@ -124,7 +146,7 @@
     <div class="container animated fadeInUp">
       <h1 class="display-3">SAAIR Conference</h1>
       <p class="lead m-t-1">November 3rd - November 5th</p>
-      <p class="lead m-t-1 m-b-2">Largest AI & Robotics gathering in South India.</p>
+      <p class="lead m-t-1 m-b-2">Largest AI & Robotics gathering in South Asia.</p>
       <button id="brochureButton" type="button" class="btn btn-lg btn-danger m-t-1">Get Brochure</button>
 
       <button type="button" class="js-scroll btn btn-lg btn-default m-t-1" data-scroll-to="#speakers">Explore</button>
@@ -134,20 +156,28 @@
 
   <section id="boast" class="banner boast p-y-3">
     <div class="wrapper">
-      <h2 style = "color: blue" class="m-b-2 display-5 text-uppercase">
+      <h2 style = "color: #fff" class="m-b-2 display-5 text-uppercase">
+        <br>
      Introducing the South Asian AI and Robotics Conference (SAAIRC) - NIT AP</h2>
+     <br>
      <p style="font-size: 18px;">
        The South Asian AI and Robotics Conference (SAAIRC) is poised to be an extraordinary gathering that transcends boundaries and harnesses the power of human ingenuity. Hosted by the esteemed National Institute of Technology Andhra Pradesh (NIT AP), this conference is a convergence of the brightest minds in the fields of AI and robotics.
      </p>
+     <br>
      <p style="font-size: 18px;">
        SAAIRC serves as a dynamic platform where pioneering professors and groundbreaking researchers from across the globe converge to exchange ideas, insights, and innovations. The conference is a melting pot of brilliance, where ideas collide, and possibilities multiply. Get ready to dive into a realm of cutting-edge technologies, breakthroughs, and transformative discussions.
      </p>
+     <br>
      <p style="font-size: 18px;">
        SAAIRC brings together a congregation of visionaries, thought leaders, and experts in AI and robotics. Engage in meaningful conversations, connect with like-minded peers, and forge partnerships that drive groundbreaking collaborations. It's a networking opportunity like no other – an avenue to create, inspire, and fuel the future.
      </p>
+     <br>
+     <br>
      <h2 style="font-size: 32px; color: red" class="m-b-2 display-5 text-uppercase">
        Mark Your Calendar: 3rd Nov 2023
      </h2>
+     <br>
+     <br>
      <p style="font-size: 18px;">
        Join us at the South Asian AI and Robotics Conference (SAAIRC) – Where Brilliance Converges, Ideas Flourish, and the Future Unfolds. Be a part of this unprecedented journey as we propel the realms of AI and robotics to new horizons.
      </p>
@@ -163,8 +193,8 @@
   </section>
   <section id="topics" class="banner learn p-y-3">
     <div class="wrapper">
-      <h2 class="m-b-2 display-5 text-uppercase">Learn Industry Practices</h2>
-      <a href="#" class="btn btn-danger btn-lg btn-block">Topics</a>
+      <h2 class="m-b-2 display-5 text-uppercase">Submit Your Research Paper </h2>
+      <a href="#" class="btn btn-danger btn-lg btn-block">Submit</a>
     </div>
   </section>
   <div id="locations" class="banner signup p-y-3">
